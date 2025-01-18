@@ -425,6 +425,7 @@ nav {
     justify-content: center;
     margin-block: 2rem;
     border-bottom: 1px solid rgba(0, 0, 0, 0.3);
+    padding-bottom: 5rem;
 }
 
 .filter-buttons {
