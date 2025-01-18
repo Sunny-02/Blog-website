@@ -236,7 +236,7 @@ filter_buttons.addEventListener('click', (e) => {
     // loop through all the card and compare them
     card.forEach((card) => {
         // console.log(card.dataset.category.toLowerCase())
-        if (category === 'All' || card.dataset.category.toLowerCase() === category) {
+        if (category === 'all' || card.dataset.category.toLowerCase() === category) {
             card.style.display = 'flex';
         } else {
             card.style.display = 'none';
