@@ -423,8 +423,9 @@ nav {
     padding: 20px 10px;
     display: flex;
     justify-content: center;
-    margin-block: 2rem;
+    margin-block: 3rem;
     border-bottom: 1px solid rgba(0, 0, 0, 0.3);
+    padding-bottom: 5rem;
 }
 
 .filter-buttons {
@@ -491,7 +492,13 @@ nav {
     padding: 15px;
     display: flex;
     align-items: center;
+
 }
+
+/* .card:hover{
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+
+} */
 
 .card .left {
     width: 50%;
@@ -570,18 +577,18 @@ nav {
     margin: auto;
 }
 
-#modal-content img{
+#modal-content img {
     width: 100%;
-border-radius: 5px;
+    border-radius: 5px;
 }
 
-#modal-content h4 b{
+#modal-content h4 b {
     font-size: 1.7rem;
-    font-weight:600 ;
-    font-family: "Poppins",serif;
+    font-weight: 600;
+    font-family: "Poppins", serif;
 }
 
-#modal-content h4 span{
+#modal-content h4 span {
     font-weight: 400;
     font-size: 1.6rem;
 }
@@ -896,7 +903,7 @@ border-radius: 5px;
     gap: 10px;
 }
 
-.form-container .group>div{
+.form-container .group>div {
     display: flex;
     flex-direction: column;
     width: 100%;
@@ -958,7 +965,7 @@ border-radius: 5px;
     transform: scale(0.98);
 }
 
-#contact-form .error{
+#contact-form .error {
     color: var(--primary-color);
     margin-top: 2px;
     margin-left: 2px;
