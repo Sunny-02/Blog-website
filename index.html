@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BlogWeb</title>
+
+    <!-- Remix icon -->
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@4.5.0/fonts/remixicon.css" rel="stylesheet" />
+    <link href='https://unpkg.com/boxicons@2.0.9/css/boxicons.min.css' rel='stylesheet'>
+
+    <!-- Css link -->
+    <link rel="stylesheet" href="Css/style.css">
+    <link rel="stylesheet" href="Css/Responsive.css">
+</head>
+
+<body>
+    <!-------------- Nav section  -------------->
+    <nav>
+        <div class="navbar container">
+            <a href="#header" class="logo">Blog<span>Web</span></a>
+            <div class="input">
+                <input type="text" placeholder="Search Blog..." class="search-box">
+                <i class="ri-close-large-line " id="cross-icon"></i>
+                <i class="ri-search-line" id="search-icon"></i>
+            </div>
+            <ul class="links">
+                <li>
+                    <a href="#header" class="nav-link">Home</a>
+                </li>
+                <li>
+                    <a href="#blog" class="nav-link">Blog</a>
+                </li>
+                <li>
+                    <a href="#" class="nav-link">About</a>
+                </li>
+                <li>
+                    <a href="#contact" class="nav-link">Contact</a>
+                </li>
+                <li>
+                    <a href="#" class="nav-link btn" id="login-btn">Login</a>
+                </li>
+
+            </ul>
+
+
+            <!-- Mobile nav -->
+            <div class="mobile-menu">
+                <i class="ri-menu-line"></i>
+            </div>
+
+
+            <!-- Mobile Search -->
+            <!-- <div class="mobile-search">
+                <input type="text" placeholder="Search Blog...">
+
+            </div> -->
+
+        </div>
+    </nav>
+
+    <!------------ Login & Signup -------------->
+    <div class="login-signup ">
+        <span class="ri-close-fill" id="close"></span>
+        <!-- Login form -->
+        <div class="login-form">
+            <form class="login">
+
+
+                <h2>Login</h2>
+                <div class="email">
+                    <i class="ri-mail-open-line"></i>
+                    <input type="email" placeholder="Enter you email" required>
+                </div>
+                <div class="password">
+                    <i class="ri-lock-line"></i>
+                    <input type="password" placeholder="Password" required>
+                </div>
+
+                <div class="term_condition">
+                    <div>
+                        <input type="checkbox" id="checkbox" required>
+                        <label for="checkbox">Remember me</label>
+                    </div>
+                    <a href="#">Fogot password?</a>
+                </div>
+
+                <button class="btn">Login Now</button>
+                <p>Don't have an accout? <span class="signup-now">Signup Now</span></p>
+            </form>
+        </div>
+
+
+        <!-- Signup form -->
+        <div class="signup-form">
+            <!-- <span class="ri-close-fill" id="close"></span> -->
+            <form class="signup">
+                <h2>Signup</h2>
+                <div class="email">
+                    <i class="ri-mail-open-line"></i>
+                    <input type="email" placeholder="Enter you email" id="email">
+                    <p class="error" id="emailError"></p>
+                </div>
+                <div class="password">
+                    <i class="ri-lock-line"></i>
+                    <input type="password" placeholder="Create password" id="pass">
+                    <p class="error" id="passError"></p>
+                </div>
+                <div class="password">
+                    <i class="ri-lock-line"></i>
+                    <input type="password" placeholder="Confirm password" id="confirmPass">
+                    <p class="error" id="confirmPassError"></p>
+                </div>
+
+                <button class="btn">Signup Now</button>
+                <p>Already have an accout? <span class="login-now">Login</span></p>
+
+            </form>
+        </div>
+
+    </div>
+
+
+    <!-------------- Header section  -------------->
+    <header class="header" id="header">
+        <div class="header_content">
+            <div class="heading">
+                <h2>Welcom to the world of Blog</h2>
+                <p>Read articles on various topics or write your own blog!</p>
+                <div class="create">
+                    <a href="#editor_container">Write a blog...</a>
+                </div>
+            </div>
+
+        </div>
+    </header>
+
+
+    <!-------------- Filter section  -------------->
+
+    <section class="filter-container container">
+        <div class="filter-buttons ">
+            <button class="active">All</button>
+            <button>Travel</button>
+            <button>Sports</button>
+            <button>Entertainment</button>
+            <button>Tech</button>
+            <button>Fashion</button>
+        </div>
+    </section>
+
+
+
+    <!-------------- Card section ---------------->
+
+    <section class="cards-container " id="blog">
+        <div class="container">
+            <h1>Recent Blog</h1>
+            <div id="cards-container">
+                <!-- Default cards will be dynamically displayed here -->
+            </div>
+        </div>
+    </section>
+
+
+    <!-------------- Model section --------------->
+
+    <div id="modal">
+        <div id="modal-content"></div>
+        <button onclick="closeModal()">Close</button>
+    </div>
+
+
+    <!------------ Editor section --------------->
+
+    <section class="editor-container" id="editor_container">
+        <div class="container">
+            <h2>Create a Blog</h2>
+            <div class="shadow">
+
+                <div class="toolbar">
+                    <div class="toolbar-top">
+
+                        <select onchange="formatText('formatBlock', this.value); this.selectedIndex=0;">
+                            <option value="">Format</option>
+                            <option value="h1">Heading 1</option>
+                            <option value="h2">Heading 2</option>
+                            <option value="h3">Heading 3</option>
+                            <option value="h4">Heading 4</option>
+                            <option value="h5">Heading 5</option>
+                            <option value="h6">Heading 6</option>
+                            <option value="p">Paragraph</option>
+                        </select>
+                        <select onchange="formatText('fontSize', this.value); this.selectedIndex=0;">
+                            <option value="">Font size</option>
+                            <option value="1">Extra small</option>
+                            <option value="2">Small</option>
+                            <option value="3">Regular</option>
+                            <option value="4">Medium</option>
+                            <option value="5">Large</option>
+                            <option value="6">Extra Large</option>
+                            <option value="7">Big</option>
+                        </select>
+                        <div class="color">
+                            <span>Color</span>
+                            <input type="color" oninput="formatText('foreColor', this.value); this.value='#000000';">
+                        </div>
+                        <div class="color">
+                            <span>Background</span>
+                            <input type="color" oninput="formatText('hiliteColor', this.value); this.value='#000000';">
+                        </div>
+                    </div>
+                    <div class="btn-toolbar">
+                        <button onclick="formatText('undo')"><i class='bx bx-undo'></i></button>
+                        <button onclick="formatText('redo')"><i class='bx bx-redo'></i></button>
+                        <button onclick="formatText('bold')"><i class='bx bx-bold'></i></button>
+                        <button onclick="formatText('underline')"><i class='bx bx-underline'></i></button>
+                        <button onclick="formatText('italic')"><i class='bx bx-italic'></i></button>
+                        <button onclick="formatText('justifyLeft')"><i class='bx bx-align-left'></i></button>
+                        <button onclick="formatText('justifyCenter')"><i class='bx bx-align-middle'></i></button>
+                        <button onclick="formatText('justifyRight')"><i class='bx bx-align-right'></i></button>
+                        <button onclick="formatText('justifyFull')"><i class='bx bx-align-justify'></i></button>
+                        <button onclick="formatText('insertOrderedList')"><i class='bx bx-list-ol'></i></button>
+                        <button onclick="formatText('insertUnorderedList')"><i class='bx bx-list-ul'></i></button>
+                    </div>
+                </div>
+
+                <!-- Editor area -->
+
+                <input type="text" id="blog-title" placeholder="Blog Title" class="editor-textarea">
+                <input type="text" id="blog-author" placeholder="Author Name" class="editor-textarea">
+                <div contenteditable="true" id="blog-description" placeholder="Blog Description"
+                    class="editor-textarea"></div>
+
+
+                <select id="blogCategory">
+                    <option value="">Category</option>
+                    <option value="travel">Travel</option>
+                    <option value="sports">Sports</option>
+                    <option value="music">Music</option>
+                    <option value="movies">Movies</option>
+                    <option value="tech">Tech</option>
+                    <option value="fashion">Fashion</option>
+                </select>
+
+                <!--  create custom choose file btn -->
+                <input type="file" id="image-upload">
+                <label for="image-upload" class="file-label">Choose File</label>
+                <div id="file-name" class="file-name"></div>
+
+
+                <button onclick="addBlog()" class="publish-button">Publish</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pop-Up for publish blog -->
+    <div class="publish-popup">
+        <p>Blog will be published!</p>
+    </div>
+
+    <!------------- Contact section -------------->
+    <section id="contact">
+        <div class="container">
+            <h2>Contact </h2>
+            <div class="form-container">
+                <h1>Message us</h1>
+                <form id="contact-form">
+                    <div class="group">
+                        <div>
+                            <input type="text" id="firstName" placeholder="First Name">
+                            <p class="error" id="firstNameError"></p>
+                        </div>
+                        <div>
+                            <input type="text" id="lastName" placeholder="Last Name">
+                            <p class="error " id="lastNameError"></p>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <input type="email" placeholder="Email Address" id="emailAddress">
+                        <p class="error " id="emailAddressError"></p>
+                    </div>
+                    <div class="form-group">
+                        <textarea id="message" placeholder="Your Message" rows="4"></textarea>
+                        <p class="error " id="messageError"></p>
+                    </div>
+                    <button>Submit</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pop up for contact form -->
+    <div class="contactForm-popup">
+        <p>Message sent successfully!</p>
+    </div>
+
+
+    <!---------------- News Section --------------->
+    <section class="news">
+        <div class="container">
+            <h3>Sign up to receive email updates, fresh blogs and more!</h3>
+            <div>
+                <input type="text" placeholder="Email address">
+                <button>Subscribe</button>
+            </div>
+        </div>
+    </section>
+
+
+    <!--------------- Footer section  --------------->
+    <footer class="footer">
+
+        <div class="container">
+            <p>Copyright &copy; 2025. All rights are reserved</p>
+            <div class="icons">
+                <a href="#"><i class="ri-twitter-fill"></i></a>
+                <a href="#"><i class="ri-linkedin-fill"></i></a>
+                <a href="#"><i class="ri-instagram-line"></i></a>
+                <a href="#"><i class="ri-facebook-fill"></i></a>
+                <a href="#"><i class="ri-youtube-fill"></i></a>
+            </div>
+        </div>
+
+    </footer>
+
+
+
+    <script src="./js/index.js"></script>
+</body>
+
+</html>

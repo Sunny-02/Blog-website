@@ -1,0 +1,236 @@
+@media(max-width:1115px) {
+    .footer .container {
+        padding-inline: 15px;
+    }
+}
+
+@media (max-width: 768px) {
+    html {
+        font-size: 59%;
+    }
+
+
+    /* Navbar */
+
+    .navbar {
+        position: relative;
+        background-color: #fff;
+    }
+
+    .navbar .links {
+        position: absolute;
+        background-color: var(--primary-color);
+        height: 50dvh;
+        width: 100%;
+        left: 0;
+        top: -50vh;
+        justify-content: center;
+        flex-direction: column;
+        gap: 2rem;
+        text-align: center;
+        display: flex;
+        z-index: -1111;
+        transition: all .4s ease-in-out;
+    }
+
+
+    .navbar .links.active {
+        top: 50px;
+    }
+
+    .navbar .links .nav-link {
+        color: #fff;
+        font-size: 1.8rem;
+    }
+
+    .mobile-menu {
+        display: block;
+    }
+
+
+    /* Header */
+    .header h2 {
+        font-size: 6vw;
+    }
+
+
+    /* footer */
+    .footer .container {
+        padding-inline: 15px;
+    }
+
+    .footer .social_icon>div {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .footer .social_icon ul {
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        margin-bottom: 30px;
+    }
+}
+
+@media(max-width:600px) {
+
+    .cards-container h1 {
+        text-align: center !important;
+    }
+
+    .card {
+        flex-direction: column;
+    }
+
+    .card .left {
+        width: 100%;
+    }
+
+    .card .right {
+        width: 100%;
+        padding-left: 0;
+    }
+
+    .card .right h4 {
+        font-size: 1.7rem;
+        margin-top: 15px;
+    }
+
+    .card button {
+        font-size: 1.7rem;
+    }
+
+
+
+    .news input {
+        width: 80%;
+        margin-bottom: 16px;
+    }
+
+    .news button {
+        width: 80%;
+    }
+
+    .footer .container {
+        flex-direction: column;
+    }
+}
+
+
+@media(max-width:500px) {
+
+    /* Header section */
+    .navbar .input {
+        width: 100%;
+    }
+
+    .header h2 {
+        font-size: 6vw;
+    }
+
+    /* search box */
+    .navbar .search-box {
+        width: 100%;
+        position: absolute;
+        left: 0;
+        right: 0;
+        top: 63px;
+        display: none;
+        padding: 10px;
+        font-size: 2rem !important;
+    }
+
+    .search-box.searchBox-show {
+        display: block;
+    }
+
+    #cross-icon.cross-show {
+        display: block;
+    }
+
+
+    .navbar #search-icon {
+        display: block;
+    }
+
+    #search-icon.searchIcon_show {
+        display: none;
+    }
+
+    /* Header */
+
+    .heading p {
+        padding-inline: 10px;
+        margin-top: 10px;
+    }
+
+    .create a {
+        font-size: 15px;
+    }
+
+
+
+    /* Card  section */
+    .card img {
+        /* height: 260px; */
+    }
+
+
+
+    /* Editor container */
+    .editor-container h2 {
+        text-align: center;
+    }
+
+
+    /* Contact */
+    #contact h2 {
+        text-align: center;
+    }
+
+    .form-container {
+        padding-inline: 15px;
+    }
+
+    .form-container button {
+        width: 100%;
+    }
+
+    /* footer */
+
+    .footer .social_icon ul {
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+    }
+
+    .footer .news input {
+        width: 100%;
+        margin-bottom: 20px;
+    }
+
+    .footer .news button {
+        width: 100%;
+    }
+}
+
+@media (max-width:400px) {
+    .header h2 {
+        font-size: 2.3rem;
+    }
+
+    .navbar .search-box {
+        font-size: 13px;
+    }
+
+    .card button {
+        font-size: 1.4rem;
+        font-family: "Roboto", serif;
+    }
+
+    .form-container .group{
+        flex-direction: column;
+    }
+
+    
+}
