@@ -212,8 +212,23 @@ nav {
     padding: 20px;
     border-radius: 5px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.9);
+    animation: slide-bck-center 0.45s ease-in-out both;
     display: none;
 }
+
+
+@keyframes slide-bck-center {
+    0% {
+        opacity: 0;
+        transform: translate(-50%, -50%) scale(0.5);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translate(-50%, -50%) scale(1);
+    }
+}
+
 
 .login-signup.show {
     display: block;
