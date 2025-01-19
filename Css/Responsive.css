@@ -215,14 +215,19 @@
         font-size: 13px;
     }
 
+    /* card sectin */
+
     .card button {
         font-size: 1.4rem;
         font-family: "Roboto", serif;
     }
 
-    .form-container .group{
-        flex-direction: column;
-    }
 
-    
 }
+
+@media (max-width:350px){
+    .login-signup{
+        width: 300px;
+    }
+}
+

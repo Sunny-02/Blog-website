@@ -101,7 +101,7 @@ nav {
 }
 
 .navbar .logo {
-    font-size: 2.1rem;
+    font-size: 2.2rem;
     color: black;
 }
 
@@ -120,6 +120,7 @@ nav {
 .navbar .nav-link {
     transition: all .3s ease-in;
     color: black;
+    font-size: 1.8rem;
 }
 
 .navbar .nav-link:hover {
@@ -150,10 +151,9 @@ nav {
     border: none;
     display: inline-block;
     box-shadow: 0 0 7px rgba(0, 0, 0, 0.3);
-    padding: 6px;
     outline: none;
     border-radius: 2px;
-    padding: 8px;
+    padding: 9px;
     font-size: 1.6rem !important;
 }
 
